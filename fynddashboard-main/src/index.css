@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 45 30% 98%;
+    --foreground: 240 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 15%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 40% 94%;
+    --secondary-foreground: 240 20% 15%;
+
+    --muted: 45 20% 92%;
+    --muted-foreground: 240 10% 45%;
+
+    --accent: 24 95% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 262 83% 58%;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262, 83%, 58%) 0%, hsl(280, 85%, 65%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(24, 95%, 60%) 0%, hsl(38, 92%, 50%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(45, 30%, 98%) 0%, hsl(45, 40%, 94%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(240 10% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(240 10% 15% / 0.1), 0 2px 4px -2px hsl(240 10% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(240 10% 15% / 0.1), 0 4px 6px -4px hsl(240 10% 15% / 0.1);
+    --shadow-glow: 0 0 20px hsl(262 83% 58% / 0.3);
+  }
+
+  .dark {
+    --background: 240 20% 8%;
+    --foreground: 45 30% 95%;
+
+    --card: 240 18% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 240 18% 12%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 262 83% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 15% 18%;
+    --secondary-foreground: 45 30% 95%;
+
+    --muted: 240 15% 20%;
+    --muted-foreground: 240 10% 60%;
+
+    --accent: 24 95% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 240 15% 20%;
+    --input: 240 15% 20%;
+    --ring: 262 83% 65%;
+
+    --sidebar-background: 240 18% 10%;
+    --sidebar-foreground: 240 4.8% 85%;
+    --sidebar-primary: 262 83% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 15% 15%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 15% 18%;
+    --sidebar-ring: 262 83% 65%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(262, 83%, 65%) 0%, hsl(280, 85%, 70%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(24, 95%, 55%) 0%, hsl(38, 92%, 55%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(240, 20%, 8%) 0%, hsl(240, 18%, 12%) 100%);
+
+    --shadow-glow: 0 0 20px hsl(262 83% 65% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
